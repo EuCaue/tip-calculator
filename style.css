@@ -1,0 +1,466 @@
+* {
+  outline: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.2s linear;
+  font-family: "Space Mono", monospace;
+  font-weight: 700;
+  background-color: var(--neutral-white);
+}
+
+:root {
+  --primary-strong-cyan: hsl(172, 67%, 45%);
+  --neutral-dark-cyan: hsl(183, 100%, 15%);
+  --neutral-dark-gray-cyan: hsl(186, 14%, 43%);
+  --neutral-gray-cyan: hsl(184, 14%, 56%);
+  --neutral-light-gray-cyan: hsl(185, 41%, 84%);
+  --neutral-very-light-gray-cyan: #f0f9f8;
+  --neutral-white: #fefefe;
+  --neutral-hover: #a0e8e0;
+  --neutral-error: #d89987;
+}
+
+input {
+  font-size: 24px;
+  appearance: textfield;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  display: flex;
+  background-color: var(--neutral-light-gray-cyan);
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#h1 {
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 13rem;
+  word-break: break-all;
+  letter-spacing: 25px;
+  text-transform: uppercase;
+  background-color: transparent;
+  color: var(--neutral-dark-cyan);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  background-color: var(--neutral-white);
+  width: 70%;
+  height: 70%;
+  box-shadow: 0 0 10px -2px rgba(0, 0, 0, 0.55);
+  margin-top: 5%;
+  gap: 1rem;
+  flex-flow: nowrap row;
+  border-radius: 20px;
+}
+
+.left,
+.right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 90%;
+  border-radius: 20px;
+}
+
+.bill-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.form-bill {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: flex-start;
+  width: 100%;
+  border-radius: 20px;
+}
+
+.label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  color: var(--neutral-dark-gray-cyan);
+  font-size: 18px;
+  text-align: left;
+  width: 95%;
+  padding-bottom: 0.5rem;
+  cursor: text;
+}
+
+.error {
+  display: none;
+  color: var(--neutral-error);
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: transparent;
+  position: relative;
+  padding-top: 8%;
+  width: 100%;
+}
+
+.input-container > img {
+  display: flex;
+  position: absolute;
+  left: 5%;
+  /* top: 72%; */
+  top: 5.7rem;
+  width: 15px;
+  background-color: transparent;
+}
+
+.input {
+  border-radius: 10px;
+  text-align: right;
+  background-color: var(--neutral-very-light-gray-cyan);
+  color: var(--neutral-dark-cyan);
+  width: 95%;
+  padding: 0.5rem;
+  border: 2px solid transparent;
+}
+.input:invalid {
+  border: 2px solid var(--neutral-error);
+}
+
+.input:valid {
+  border: 2px solid transparent;
+}
+
+.input:focus,
+.input:hover,
+.input:active {
+  border: 2px solid var(--primary-strong-cyan);
+}
+
+.tips-percentage {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.tips-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 95%;
+  gap: 1rem;
+}
+
+.tips-percentage > h1 {
+  position: absolute;
+  left: 2%;
+  top: 12%;
+  color: var(--neutral-dark-gray-cyan);
+  text-align: left;
+}
+
+.tips-percentage > .error {
+  position: absolute;
+  left: 47%;
+  top: 12%;
+  width: max-content;
+  background-color: transparent;
+}
+
+.tip-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+  height: 15%;
+}
+
+.tip-value {
+  border-radius: 5px;
+  text-align: center;
+  background-color: var(--neutral-dark-cyan);
+  color: var(--neutral-white);
+  width: 100%;
+  height: 5vh;
+  font-size: 20px;
+}
+
+.tip-value:focus,
+.tip-value:active {
+  background-color: var(--primary-strong-cyan);
+  color: var(--neutral-dark-cyan);
+}
+.tip-value:hover {
+  background-color: var(--neutral-hover);
+  color: var(--neutral-dark-cyan);
+}
+
+#custom {
+  color: var(--neutral-dark-cyan);
+  background-color: var(--neutral-very-light-gray-cyan);
+  cursor: text;
+  text-align: right;
+  border: 2px solid transparent;
+}
+
+#custom:hover,
+#custom:focus,
+#custom:active {
+  border: 2px solid var(--primary-strong-cyan);
+  transition: unset;
+}
+
+#custom::placeholder {
+  text-align: center;
+}
+
+.people-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+  width: 100%;
+  height: auto;
+  padding-bottom: 1rem;
+}
+
+.form-people {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-self: flex-start;
+  width: 100%;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: transparent;
+  position: relative;
+  padding-top: 8%;
+  width: 100%;
+}
+
+.result-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 94%;
+  height: 100%;
+}
+
+.result {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-self: center;
+  background-color: var(--neutral-dark-cyan);
+  color: var(--neutral-white);
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  border-radius: 20px;
+}
+
+.tip-amount {
+  width: 100%;
+  padding-top: 10%;
+  font-size: 1.1rem;
+}
+
+.tip-amount,
+.tip-amount > * {
+  background-color: var(--neutral-dark-cyan);
+}
+
+.tip-amount > small {
+  color: var(--neutral-gray-cyan);
+}
+
+.tip-amount > p {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 3rem;
+  color: var(--primary-strong-cyan);
+  width: 30%;
+  text-align: left;
+}
+
+.tip-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 35%;
+}
+.tip-amount > small {
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  background-color: transparent;
+}
+
+.tip-amount > span {
+  min-width: 26%;
+}
+
+.btn-reset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  margin-top: 38%;
+  width: 80%;
+  height: 10%;
+  font-size: 24px;
+  border-radius: 5px;
+  background-color: var(--primary-strong-cyan);
+  color: var(--neutral-dark-cyan);
+}
+
+.btn-reset:hover {
+  background-color: var(--neutral-hover);
+}
+
+@media screen and (min-width: 0) and (max-width: 700px) {
+  #h1 {
+    left: 57%;
+  }
+
+  .container {
+    width: 90%;
+    height: 60%;
+    flex-wrap: wrap;
+  }
+
+  .right {
+    height: auto;
+  }
+
+  .input-container > img {
+    position: static;
+    transform: translate(130%, 170%);
+    align-self: baseline;
+  }
+
+  .label {
+    padding: 0;
+    font-size: 1rem;
+  }
+
+  .input {
+    width: 95%;
+    padding: 0.2rem;
+  }
+
+  .tip-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    height: 15%;
+  }
+  .tip-container {
+    height: 90%;
+  }
+
+  .tips-percentage {
+    flex-direction: row;
+  }
+
+  .tips-form {
+    margin-top: 10%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .tips-percentage > h1 {
+    top: 5%;
+    background-color: transparent;
+    font-size: 1rem;
+  }
+
+  .tips-percentage > .error {
+    top: 5%;
+    left: 60%;
+  }
+
+  .tip-amount {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    gap: 20%;
+  }
+
+  .tip-amount > p {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    font-size: 2rem;
+    color: var(--primary-strong-cyan);
+    width: 40%;
+    text-align: left;
+  }
+
+  .result {
+    height: 70%;
+    /* height: 100%; */
+  }
+
+  .tip-amount > span {
+    min-width: 39%;
+  }
+
+  .tip-amount > small {
+    position: absolute;
+    top: 80%;
+    left: 1%;
+    background-color: transparent;
+    z-index: 20;
+  }
+
+  .btn-reset {
+    margin-top: 8vh;
+    width: 100%;
+    height: 15%;
+  }
+}
