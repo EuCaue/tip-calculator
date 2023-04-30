@@ -132,8 +132,7 @@ body {
   display: flex;
   position: absolute;
   left: 5%;
-  /* top: 72%; */
-  top: 5.7rem;
+  top: 74%;
   width: 15px;
   background-color: transparent;
 }
@@ -191,7 +190,7 @@ body {
 
 .tips-percentage > .error {
   position: absolute;
-  left: 47%;
+  left: 61%;
   top: 12%;
   width: max-content;
   background-color: transparent;
