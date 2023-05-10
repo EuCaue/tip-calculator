@@ -154,9 +154,7 @@ body {
   border: 2px solid transparent;
 }
 
-.input:focus,
-.input:hover,
-.input:active {
+.input:is(:focus, :hover, :active) {
   border: 2px solid var(--primary-strong-cyan);
 }
 
@@ -216,11 +214,11 @@ body {
   font-size: 20px;
 }
 
-.tip-value:focus,
-.tip-value:active {
+.tip-value:is(:focus, :active) {
   background-color: var(--primary-strong-cyan);
   color: var(--neutral-dark-cyan);
 }
+
 .tip-value:hover {
   background-color: var(--neutral-hover);
   color: var(--neutral-dark-cyan);
@@ -234,9 +232,7 @@ body {
   border: 2px solid transparent;
 }
 
-#custom:hover,
-#custom:focus,
-#custom:active {
+#custom:is(:hover, :focus, :active) {
   border: 2px solid var(--primary-strong-cyan);
   transition: unset;
 }
@@ -442,7 +438,6 @@ body {
 
   .result {
     height: 70%;
-    /* height: 100%; */
   }
 
   .tip-amount > span {
